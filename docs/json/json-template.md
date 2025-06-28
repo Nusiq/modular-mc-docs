@@ -77,16 +77,16 @@ You can use expressions to generate multiple keys at once. If an expression used
 }
 ```
 
-## The `k` Object
+## The `K` Object
 
-For more advanced scenarios, the `k` helper object allows you to pass a custom scope to the value of each generated key. This is especially useful when creating keys in a loop and needing per-item variables.
+For more advanced scenarios, the `K` helper object allows you to pass a custom scope to the value of each generated key. This is especially useful when creating keys in a loop and needing per-item variables.
 
-The `k` object constructor is `k(keyName, scopeObject)`.
+The `K` object constructor is `K(keyName, scopeObject)`.
 
 *Input JSON:*
 ```json
 {
-    "`[0, 1, 2].map(i => k('event_' + i, { index: i }))`": {
+    "`[0, 1, 2].map(i => K('event_' + i, { index: i }))`": {
         "action": "`'log_event_' + index`"
     }
 }
