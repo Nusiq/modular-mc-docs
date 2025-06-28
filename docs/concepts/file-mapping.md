@@ -75,6 +75,21 @@ Here, the `entities/hostile/` and `models/` paths are discarded, and the files a
 
 The behavior of auto-mapping is controlled by a set of rules in the `auto-map.ts` file. To learn how to view and customize these rules, see the {ref}`Auto-Mapping Configuration<auto-mapping-configuration>` documentation.
 
+
+## Glob Patterns
+The `source` property supports glob patterns to match multiple files at once. This is useful in combination with the `:auto` keyword to map multiple files at once without collisions.
+
+```typescript
+export const MAP = [
+    {
+        source: "entities/*.behavior.json",
+        target: ":auto"
+    }
+];
+```
+
+This will match all files in the `entities/` directory that end with `.behavior.json` and map them automatically based on their names.
+
 ## Target Objects
 
 For advanced scenarios, you can use target objects to have fine-grained control over the output path.
