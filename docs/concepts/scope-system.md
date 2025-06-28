@@ -1,7 +1,7 @@
 (scope-system)=
 # Scope System
 
-The scope system in ModularMC allows you to define variables that can be used in JSON templates and shared across your project. Scope is a collection of variables and data that can be accessed by JSON templates during processing. Scope variables enable dynamic content generation and module configuration.
+The scope system in ModularMC allows you to define variables that can be used in {ref}`JSON templates<json-template>` and shared across your project. Scope is a collection of variables and data that can be accessed by JSON templates during processing. Scope variables enable dynamic content generation and module configuration.
 
 Unlike System Template, ModularMC doesn't have a special `_scope.json` file in every module. ModularMC manages scope directly in `_map.ts` files and through configuration. If you still want to use `_scope.json` you can simply import it in your `_map.ts` file.
 

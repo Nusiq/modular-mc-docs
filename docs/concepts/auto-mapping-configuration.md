@@ -1,7 +1,7 @@
 (auto-mapping-configuration)=
 # Auto-Mapping Configuration
 
-Auto-mapping behavior is controlled by the `auto-map.ts` file, which defines how file extensions are mapped to output directories. You can customize this mapping to fit your project's specific needs.
+{ref}`Auto-mapping<auto-mapping>` behavior is controlled by the `auto-map.ts` file, which defines how file extensions are mapped to output directories. You can customize this mapping to fit your project's specific needs.
 
 ## Default Auto-Map Configuration
 
@@ -32,7 +32,7 @@ export const AUTO_MAP = {
 
 ## Complete Default Configuration
 
-The full default configuration ships with ModularMC and is located at `data/modular_mc/auto-map.ts` in your project. It's available to you once you install ModularMC with Regolith. Open that file to view every mapping or use it as a starting point for your own custom version.
+The full default configuration ships with ModularMC and is located at [data/modular_mc/auto-map.ts](https://github.com/Nusiq/regolith-filters/blob/master/modular_mc/data/auto-map.ts) in your project. It's available to you once you install ModularMC with Regolith. Open that file to view every mapping or use it as a starting point for your own custom version.
 
 ## File Extension Patterns
 

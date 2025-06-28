@@ -1,6 +1,7 @@
+(the-map-ts-file)=
 # The _map.ts File
 
-The `_map.ts` file is the heart of every ModularMC module. It defines how the module's files are processed and exported to the final addon structure. It's a TypeScript file that can export two special variables `MAP` and `SCRIPTS`:
+The `_map.ts` file is the heart of every {ref}`ModularMC module<module-structure>`. It defines how the module's files are processed and exported to the final addon structure. It's a TypeScript file that can export two special variables `MAP` and `SCRIPTS`:
 
 ```typescript
 export const MAP = [
@@ -59,6 +60,8 @@ Defines how to handle conflicts when multiple modules export to the same target 
 - `"skip"`: Skip this entry and continue
 - `"merge"`: Attempt to merge the files (JSON only)
 - `"overwrite"`: Overwrite the existing file
+- `"appendStart"`: Prepend the source file content to the beginning of the existing file (text files only)
+- `"appendEnd"`: Append the source file content to the end of the existing file (text files only)
 
 See {ref}`File Merging<file-merging>` for more details.
 
@@ -66,11 +69,11 @@ See {ref}`File Merging<file-merging>` for more details.
 Override automatic file type detection. Useful for files with non-standard extensions. This allows you to mark a file as JSON to enable JSON template, even if it has a different extension.
 
 ### scope: object
-Define variables specific to this mapping entry, available in JSON templates. These override any variables from the module, config, or global scopes. See {ref}`Scope System<scope-system>` for more information.
+Define variables specific to this mapping entry, available in {ref}`JSON templates<json-template>`. These override any variables from the module, config, or global scopes. See {ref}`Scope System<scope-system>` for more information.
 
 ## SCRIPTS Export
 
-The `SCRIPTS` export defines TypeScript or JavaScript files that should be compiled with esbuild and included in the final addon.
+The `SCRIPTS` export defines TypeScript or JavaScript files that should be compiled with Esbuild and included in the final addon.
 
 ```typescript
 export const SCRIPTS = [
@@ -79,4 +82,4 @@ export const SCRIPTS = [
 ];
 ```
 
-For details on script compilation and esbuild options, see {ref}`Script Compilation<script-compilation>`.
+For details on script compilation and Esbuild options, see {ref}`Script Compilation<script-compilation>`.

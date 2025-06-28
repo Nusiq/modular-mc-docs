@@ -3,7 +3,7 @@
 
 ## Installation
 
-To make the ModularMC filter available in your Regolith project, run the following command:
+To make the ModularMC filter available in your [Regolith](https://regolith-docs.readthedocs.io/en/stable/) project, run the following command:
 
 ```text
 regolith install modular_mc
@@ -42,13 +42,14 @@ The `scopePath` is the path to a JSON file defining the global scope of variable
 
 The `scope` property is an object of variables that will be available in the templates. No variables are set by default in this scope. The variables defined in the `scopePath` file will override the variables defined in the `scope` property. You can learn more about scopes in the {ref}`Scope System<scope-system>` section of the documentation.
 
+(esbuild-configuration)=
 ### esbuild: object
 
 The `esbuild` property configures TypeScript and JavaScript compilation. It has two sub-properties:
 
 #### esbuild.settings: object
 
-Contains compilation options for TypeScript/JavaScript processing. Note that ModularMC only supports specific settings, not arbitrary esbuild options. Supported settings:
+Contains compilation options for TypeScript/JavaScript processing. Note that ModularMC only supports specific settings, not arbitrary Esbuild options. Supported settings:
 
 - `sourcemap`: Whether to generate source maps for debugging (true/false, default: false)
 - `minify`: Whether to minify the output (true/false, default: false)

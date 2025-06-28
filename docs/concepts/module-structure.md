@@ -1,8 +1,9 @@
+(module-structure)=
 # Module Structure
 
 ## Creating Modules
 
-Any directory within `data/modular_mc` that contains a `_map.ts` file becomes a module. The `_map.ts` file defines how the module's files should be processed and where they should be exported.
+Any directory within `data/modular_mc` that contains a {ref}`_map.ts<the-map-ts-file>` file becomes a module. The `_map.ts` file defines how the module's files should be processed and where they should be exported.
 
 ### Basic Module Structure
 
@@ -40,7 +41,7 @@ You can put modules inside other modules. This way a big module can have smaller
             📄 magic_missile.ts
 ```
 
-Each directory with a `_map.ts` file is processed as an independent module, regardless of nesting level.
+Each directory with a {ref}`_map.ts<the-map-ts-file>` file is processed as an independent module, regardless of nesting level.
 
 ## Module Processing Order
 

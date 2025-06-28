@@ -10,7 +10,7 @@ If you're looking for the filter itself, you can find it [here](https://github.c
 
 - **Module organization**: Group files by purpose, making projects easier to understand and maintain
 - **JSON templating**: Dynamic content generation using TypeScript expressions inside JSON files
-- **Script compilation**: Built-in esbuild support for TypeScript/JavaScript compilation
+- **Script compilation**: Built-in Esbuild support for TypeScript/JavaScript compilation
 - **Familiar syntax**: Uses familiar for most addon developers TypeScript syntax for configuration and templating
 - **Easy sharing**: Modules can be copied between projects or shared with other developers
 

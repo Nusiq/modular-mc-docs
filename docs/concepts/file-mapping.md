@@ -22,6 +22,7 @@ export const MAP = [
 
 This approach gives you complete control over where each file is placed in the output.
 
+(auto-mapping)=
 ## Auto-Mapping
 
 Auto-mapping automatically determines the target path based on the file's extension and a predefined mapping configuration. This saves time and ensures consistent file organization.

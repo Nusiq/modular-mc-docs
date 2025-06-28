@@ -1,7 +1,7 @@
 (script-compilation)=
 # Script Compilation
 
-ModularMC includes built-in TypeScript and JavaScript compilation using esbuild. This allows you to write modern TypeScript code and have it automatically compiled and integrated into your addon.
+ModularMC includes built-in TypeScript and JavaScript compilation using Esbuild. This allows you to write modern TypeScript code and have it automatically compiled and integrated into your addon.
 
 ## Defining Scripts
 
@@ -29,21 +29,21 @@ Scripts are paths relative to the module directory:
 
 ## Compilation Process
 
-ModularMC uses a **project-based compilation approach** that differs from some other script-compiling filters.
+ModularMC uses a **project-based compilation approach** that differs from some other script-compiling filters like [gametests](https://github.com/Bedrock-OSS/regolith-filters/tree/master/gametests).
 
 ### How ModularMC Script Compilation Works
 ModularMC compiles scripts directly from your **project directory**, not from the temporary location that Regolith creates when running filters. It performs the following steps:
 
-1. **Collects paths to all scripts** from all modules in the temporary location
+1. **Collects paths to all scripts** from all modules in the [temporary location](https://regolith-docs.readthedocs.io/en/1.5.2/developing-filters/filter-development-introduction/#the-working-directory-of-filters)
 2. **Resolves script paths** to their corresponding files in the project directory
-3. **Runs esbuild compilation** using files from the project
+3. **Runs Esbuild compilation** using files from the project
 4. **Exports compiled bundle** to both the temporary location and optionally to `buildPath` (if specified)
 
 This approach results in **faster compilation** because the `node_modules` folder is not copied to the temporary location. However, a crucial implication is that changes made to your TypeScript files by other Regolith filters will not affect the compilation; ModularMC always compiles from your original project files.
 
-## esbuild Configuration
+## Esbuild Configuration
 
-The detail of configuration is described in the {ref}`Installation and Configuration<installation-and-configuration>` section of the documentation.
+The detail of configuration is described in the {ref}`configuration<esbuild-configuration>` section of the documentation.
 
 ## Script Dependencies
 

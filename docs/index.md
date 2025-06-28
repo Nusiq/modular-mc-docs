@@ -1,6 +1,6 @@
 # ModularMC Documentation
 
-Welcome to the ModularMC Regolith filter documentation. ModularMC is a TypeScript-based successor to the System Template filter, designed to organize Minecraft addon files into logical modules based on their purpose rather than their file type.
+Welcome to the [ModularMC](https://github.com/Nusiq/regolith-filters/tree/master/modular_mc) Regolith filter documentation. ModularMC is a TypeScript-based successor to the [System Template](https://github.com/Nusiq/regolith-filters/tree/master/system_template) filter, designed to organize Minecraft addon files into logical modules based on their purpose rather than their file type.
 
 ```{toctree}
 :hidden:
