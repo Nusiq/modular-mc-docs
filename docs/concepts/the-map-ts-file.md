@@ -45,7 +45,11 @@ Each mapping entry is an object with the following properties:
 ```
 
 ### source: string
-The path to the source file relative to the module directory.
+The path to the source file relative to the module directory or absolute.
+
+The path can be absolute under the following conditions:
+- it must be within the [data folder](https://regolith-docs.readthedocs.io/en/1.5.2/using-regolith/data-folder/#filter-data) of ModularMC
+- the target can't be `:auto` or an object with `path` property set to `:auto` (using `:autoFlat` is allowed).
 
 ### target: string | object
 Defines where the file should be exported. This can be a simple string path or a configuration object. For detailed information on all mapping strategies, including auto-mapping with `:auto` and `:autoFlat`, and using target objects, see the {ref}`File Mapping<file-mapping>` documentation.

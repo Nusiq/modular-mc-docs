@@ -26,7 +26,7 @@ Note that keys must always evaluate to a string.
 
 ## Using Variables from Scope
 
-Your expressions can access variables from the {ref}`active scope<scope-system>`. Scope is defined in your `config.json`, module-level `_map.ts` files, and entry-specific `scope` properties.
+Your expressions can access variables from the {ref}`scope<scope-system>`.
 
 *Scope:*
 ```json

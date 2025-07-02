@@ -15,11 +15,6 @@ To enable the filter, add the following configuration to the filters list in the
 {
     "filter": "modular_mc",
     "settings": {
-        "scopePath": "scope.json",
-        "scope": {
-            "variable1": "example variable 1",
-            "variable2": 2,
-        },
         "esbuild": {
             "buildPath": ".modular_mc/main.js",
             "settings": {
@@ -33,14 +28,6 @@ To enable the filter, add the following configuration to the filters list in the
 ## Configuration Settings
 
 Configuration settings should be placed in the `settings` property of the filter in the `config.json` file of your Regolith project. All settings are optional and have default behavior if not set.
-
-### scopePath: string
-
-The `scopePath` is the path to a JSON file defining the global scope of variables. You can learn more about scopes in the {ref}`Scope System<scope-system>` section of the documentation. The path is relative to the data directory.
-
-### scope: object
-
-The `scope` property is an object of variables that will be available in the templates. No variables are set by default in this scope. The variables defined in the `scopePath` file will override the variables defined in the `scope` property. You can learn more about scopes in the {ref}`Scope System<scope-system>` section of the documentation.
 
 (esbuild-configuration)=
 ### esbuild: object
