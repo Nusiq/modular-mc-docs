@@ -35,3 +35,10 @@ json/file-merging
 
 scripting/script-compilation
 ```
+
+```{toctree}
+:hidden:
+:caption: Tips and Tricks
+
+tips-and-tricks/shared-files
+```
