@@ -90,6 +90,33 @@ export const MAP = [
 
 This will match all files in the `entities/` directory that end with `.behavior.json` and map them automatically based on their names.
 
+## Directory Mapping
+
+When you specify a target path that ends with `/`, ModularMC will move the source file to that directory while preserving the original filename.
+
+```typescript
+export const MAP = [
+    {
+        source: "zombie.behavior.json",
+        target: "BP/entities/"  // → BP/entities/zombie.behavior.json
+    },
+    {
+        source: "textures/zombie.png",
+        target: "RP/textures/entity/"  // → RP/textures/entity/zombie.png
+    },
+    {
+        source: "models/*.geo.json",
+        target: "RP/models/"  // → Export all geo.json files to RP/models/
+    }
+];
+```
+
+This is particularly useful when you want to organize files into specific directories without having to specify the full filename in the target path.
+
+```{warning}
+Paths without extensions are treated as filenames, not directories. You must explicitly end the path with `/` to indicate a directory target.
+```
+
 ## Target Objects
 
 For advanced scenarios, you can use target objects to have fine-grained control over the output path.
