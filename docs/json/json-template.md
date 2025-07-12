@@ -3,15 +3,21 @@
 
 ModularMC features a powerful JSON templating system that allows you to embed TypeScript expressions directly within your JSON files. This enables dynamic and reusable code, reducing duplication and making your modules more powerful.
 
-## Basic Syntax: Backticks
+```{note}
+**Difference from System Template**: While System Template uses backticks (`` ` ``) as prefix and suffix for expressions, ModularMC uses the `::` prefix syntax for cleaner syntax.
 
-JSON Template expressions are TypeScript code enclosed in backticks (`` ` ``). These expressions can be used for both keys and values in your JSON objects.
+This change was made to make searching for expressions easier (simply use `CTRL+F` and search for `::` in most text editors), and to make typing expressions easier.
+```
+
+## Basic Syntax: `::` Prefix
+
+JSON Template expressions are TypeScript code prefixed with `::`. These expressions can be used for both keys and values in your JSON objects.
 
 *Input JSON:*
 ```json
 {
-    "foo": "`2 + 2`",
-    "`'key_' + (5+5)`": "baz"
+    "foo": "::2 + 2",
+    "::'key_' + (5+5)": "baz"
 }
 ```
 
@@ -40,7 +46,7 @@ Your expressions can access variables from the {ref}`scope<scope-system>`.
 {
     "minecraft:entity": {
         "description": {
-            "identifier": "`entity_id`"
+            "identifier": "::entity_id"
         }
     }
 }
@@ -64,7 +70,7 @@ You can use expressions to generate multiple keys at once. If an expression used
 *Input JSON:*
 ```json
 { 
-    "`['foo', 'bar', 'baz']`": { "enabled": true }
+    "::['foo', 'bar', 'baz']": { "enabled": true }
 }
 ```
 
@@ -86,8 +92,8 @@ The `K` object constructor is `K(keyName, scopeObject)`.
 *Input JSON:*
 ```json
 {
-    "`[0, 1, 2].map(i => K('event_' + i, { index: i }))`": {
-        "action": "`'log_event_' + index`"
+    "::[0, 1, 2].map(i => K('event_' + i, { index: i }))": {
+        "action": "::'log_event_' + index"
     }
 }
 ```
@@ -118,7 +124,7 @@ The value of `__unpack__` must be an array of objects, where each object provide
     { "item": "minecraft:stone" },
     {
         "__unpack__": "[{ 'color': 'red' }, { 'color': 'green' }]",
-        "item": "`'wool:' + color`"
+        "item": "::'wool:' + color"
     },
     { "item": "minecraft:dirt" }
 ]
@@ -141,8 +147,8 @@ If you need to generate a list of simple values instead of objects, you can add 
 [
     "minecraft:stone",
     {
-        "__unpack__": "`['red', 'green', 'blue']`",
-        "__value__": "`'wool:' + item`"
+        "__unpack__": "::['red', 'green', 'blue']",
+        "__value__": "::'wool:' + item"
     }
 ]
 ```
@@ -165,7 +171,7 @@ The `joinStr` helper object can be used to join a list of strings into a single 
 *Input JSON:*
 ```json
 [
-    "`joinStr('; ')`",
+    "::joinStr('; ')",
     "statement 1",
     "statement 2",
     "statement 3"
@@ -185,10 +191,10 @@ If any expression evaluates to `undefined`, the key-value pair (or array item) i
 ```json
 {
     "always_included": true,
-    "sometimes_included": "`some_condition ? 'hello' : undefined`",
+    "sometimes_included": "::some_condition ? 'hello' : undefined",
     "an_array": [
         "a",
-        "`another_condition ? 'b' : undefined`",
+        "::another_condition ? 'b' : undefined",
         "c"
     ]
 }
