@@ -19,14 +19,15 @@ concepts/the-map-ts-file
 concepts/file-mapping
 concepts/auto-mapping-configuration
 concepts/scope-system
+templates/file-merging
 ```
 
 ```{toctree}
 :hidden:
-:caption: JSON
+:caption: Templates
 
-json/json-template
-json/file-merging
+templates/json-template
+templates/text-template
 ```
 
 ```{toctree}

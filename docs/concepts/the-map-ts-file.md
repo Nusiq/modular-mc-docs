@@ -38,6 +38,7 @@ Each mapping entry is an object with the following properties:
     source: string,              // Required - source file path
     target: string | object,     // Required - target path or configuration
     jsonTemplate?: boolean,      // Optional - enable JSON template processing
+    textTemplate?: boolean,      // Optional - enable text template processing
     onConflict?: string,         // Optional - conflict resolution strategy
     fileType?: string,           // Optional - override file type detection
     scope?: object               // Optional - entry-specific scope variables
@@ -57,6 +58,9 @@ Defines where the file should be exported. This can be a simple string path or a
 ### jsonTemplate: boolean
 When `true`, the source file is processed as a JSON template, allowing TypeScript expressions in strings. See {ref}`JSON Template<json-template>` for details on template syntax.
 
+### textTemplate: boolean
+When `true`, the source file is processed as a text template, allowing TypeScript expressions using `{ts: ... :}` syntax. See {ref}`Text Template<text-template>` for details on template syntax.
+
 ### onConflict: string
 Defines how to handle conflicts when multiple modules export to the same target path. Options:
 
@@ -73,7 +77,7 @@ See {ref}`File Merging<file-merging>` for more details.
 Override automatic file type detection. Useful for files with non-standard extensions. This allows you to mark a file as JSON to enable JSON template, even if it has a different extension.
 
 ### scope: object
-Define variables specific to this mapping entry, available in {ref}`JSON templates<json-template>`. These override any variables from the module, config, or global scopes. See {ref}`Scope System<scope-system>` for more information.
+Define variables specific to this mapping entry, available in {ref}`JSON templates<json-template>` and {ref}`text templates<text-template>`. These override any variables from the module, config, or global scopes. See {ref}`Scope System<scope-system>` for more information.
 
 ## SCRIPTS Export
 
