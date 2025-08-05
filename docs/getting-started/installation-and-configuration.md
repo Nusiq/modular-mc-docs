@@ -42,6 +42,7 @@ Contains compilation options for TypeScript/JavaScript processing. Note that Mod
 - `minify`: Whether to minify the output (true/false, default: false)
 - `external`: Array of packages to mark as external (default: ["@minecraft/server"])
 - `outfile`: Output file path relative to filter working directory (default: "BP/scripts/main.js")
+- `dropLabels`: Array of labels to drop from the output. For example, you can label your debug-only code with `DEBUG:` and then drop it from the production build by setting this to `["DEBUG"]`. (default: `[]`)
 
 Other esbuild settings like `target` (es2020), `format` (esm), and `bundle` (true) are hardcoded by ModularMC for compatibility.
 
