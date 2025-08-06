@@ -9,7 +9,7 @@
 project = 'ModularMC'
 copyright = '2025, Nusiq'
 author = 'Nusiq'
-release = '0.6.0'
+release = '0.7.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

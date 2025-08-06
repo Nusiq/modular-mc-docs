@@ -47,4 +47,4 @@ The detail of configuration is described in the {ref}`configuration<esbuild-conf
 
 ## Script Dependencies
 
-Since ModularMC compiles from your project directory, dependency management works just like a normal Node.js/Deno project. Scripts can import from other scripts in your project and from installed packages.
+ModularMC allows you to define dependencies in the `deno.json` file. If you put the `deno.json` file in the root of your project, ModularMC will use it to resolve dependencies. Adding it is not required, but without it you will have to limit yourself to the built-in moudles accessible to Minecraft.
