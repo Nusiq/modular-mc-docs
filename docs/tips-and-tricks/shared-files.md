@@ -56,3 +56,8 @@ export const MAP = [
 ```
 The `sharedTexture1` and `sharedTexture2` variables are absolute paths generated in the `_shared_resources.ts` file.
 
+```{note}
+The `../shared/_shared_resources` import could also be accessed using import aliases defined in `deno.json` in the project's root instead of relative paths.
+
+This is made possible through custom mechanisms that make `deno.json` imports available in both the mapping context (for evaluating `_map.ts` files) and the compilation context (for compiling scripts). While effective, these mechanisms are not without limitations, so it's recommended to understand how they work. For more details, see the {ref}`Execution Contexts<execution-contexts>` section.
+```

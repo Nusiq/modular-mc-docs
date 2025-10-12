@@ -37,7 +37,7 @@ ModularMC compiles scripts directly from your **project directory**, not from th
 1. **Collects paths to all scripts** from all modules in the [temporary location](https://regolith-docs.readthedocs.io/en/1.5.2/developing-filters/filter-development-introduction/#the-working-directory-of-filters)
 2. **Resolves script paths** to their corresponding files in the project directory
 3. **Runs Esbuild compilation** using files from the project
-4. **Exports compiled bundle** to both the temporary location and optionally to `buildPath` (if specified)
+4. **Exports compiled bundle** to both the temporary location and optionally to {ref}`buildPath<esbuild-build-path>` (if specified)
 
 This approach results in **faster compilation** because the `node_modules` folder is not copied to the temporary location. However, a crucial implication is that changes made to your TypeScript files by other Regolith filters will not affect the compilation; ModularMC always compiles from your original project files.
 

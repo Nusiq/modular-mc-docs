@@ -18,6 +18,7 @@ concepts/module-structure
 concepts/the-map-ts-file
 concepts/file-mapping
 concepts/auto-mapping-configuration
+concepts/execution-contexts
 concepts/scope-system
 templates/file-merging
 ```
@@ -42,4 +43,5 @@ scripting/script-compilation
 :caption: Tips and Tricks
 
 tips-and-tricks/shared-files
+tips-and-tricks/debugging-with-minecraft-bedrock-debugger
 ```

@@ -46,8 +46,9 @@ Contains compilation options for TypeScript/JavaScript processing. Note that Mod
 
 Other esbuild settings like `target` (es2020), `format` (esm), and `bundle` (true) are hardcoded by ModularMC for compatibility.
 
+(esbuild-build-path)=
 #### esbuild.buildPath: string
 
 The `buildPath` specifies where compiled scripts should be output, relative to the project root. This is useful for development workflows where you want scripts compiled to a specific location for easier debugging.
 
-For example, setting `"buildPath": ".modular_mc/main.js"` will compile scripts to that location for development. It will also export them to the final behavior pack to be used by Minecraft.
+For example, setting `"buildPath": ".modular_mc/main.js"` will compile scripts to that location for development. It will also export them to the final behavior pack to be used by Minecraft. This is useful for {ref}`debugging with the Minecraft Bedrock Debugger<debugging-with-minecraft-bedrock-debugger>`.
