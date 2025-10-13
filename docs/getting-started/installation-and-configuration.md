@@ -15,6 +15,8 @@ To enable the filter, add the following configuration to the filters list in the
 {
     "filter": "modular_mc",
     "settings": {
+        "whitelist": [""],
+        "blacklist": [],
         "esbuild": {
             "buildPath": ".modular_mc/main.js",
             "settings": {
@@ -52,3 +54,25 @@ Other esbuild settings like `target` (es2020), `format` (esm), and `bundle` (tru
 The `buildPath` specifies where compiled scripts should be output, relative to the project root. This is useful for development workflows where you want scripts compiled to a specific location for easier debugging.
 
 For example, setting `"buildPath": ".modular_mc/main.js"` will compile scripts to that location for development. It will also export them to the final behavior pack to be used by Minecraft. This is useful for {ref}`debugging with the Minecraft Bedrock Debugger<debugging-with-minecraft-bedrock-debugger>`.
+
+### whitelist: string[]
+
+An array of strings specifying which modules to include in the processing. Each string represents a path relative to the `data/modular_mc` directory. If a module's path matches (exactly or as a subdirectory) any of the whitelist entries, it will be processed.
+
+- Empty string `""` (default) includes all modules.
+- `"subfolder"` includes modules in `data/modular_mc/subfolder/` and its subdirectories.
+- Multiple entries allow including multiple specific areas.
+
+Default: `[""]`
+
+### blacklist: string[]
+
+An array of strings specifying which modules to exclude from processing. Each string represents a path relative to the `data/modular_mc` directory. If a module's path matches (exactly or as a subdirectory) any of the blacklist entries, it will not be processed, even if it matches the whitelist.
+
+- Empty array `[]` (default) excludes nothing.
+- `"experimental"` excludes modules in `data/modular_mc/experimental/` and its subdirectories.
+- Multiple entries allow excluding multiple specific areas.
+
+Default: `[]`
+
+**Note:** Blacklist takes precedence over whitelist. If a module matches both, it will be excluded.
