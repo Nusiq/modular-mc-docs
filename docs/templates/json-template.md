@@ -147,20 +147,19 @@ If you need to generate a list of simple values instead of objects, you can add 
 [
     "minecraft:stone",
     {
-        "__unpack__": "::['red', 'green', 'blue']",
-        "__value__": "::'wool:' + item"
+        "__unpack__": "[{ 'color': 'red' }, { 'color': 'green' }]",
+        "__value__": "::'wool:' + color"
     }
 ]
 ```
-In this simpler form, the `__unpack__` array contains the values directly, which are available in the `__value__` expression via the `item` variable.
+In this simpler form, the `__unpack__` array contains the values directly, which are available in the `__value__` expression via the `color` variable.
 
 *Output JSON:*
 ```json
 [
     "minecraft:stone",
     "wool:red",
-    "wool:green",
-    "wool:blue"
+    "wool:green"
 ]
 ```
 
