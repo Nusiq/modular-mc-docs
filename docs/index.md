@@ -14,12 +14,12 @@ getting-started/installation-and-configuration
 :hidden:
 :caption: Core Concepts
 
-concepts/module-structure
-concepts/the-map-ts-file
-concepts/file-mapping
-concepts/auto-mapping-configuration
-concepts/execution-contexts
-concepts/scope-system
+core-concepts/module-structure
+core-concepts/the-map-ts-file
+core-concepts/file-mapping
+core-concepts/auto-mapping-configuration
+core-concepts/execution-contexts
+core-concepts/scope-system
 templates/file-merging
 ```
 

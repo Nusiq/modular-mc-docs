@@ -2,6 +2,9 @@
 
 pushd %~dp0
 
+REM Run synchronization before building
+python3 sync_llms.py
+
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (

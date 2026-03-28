@@ -1,0 +1,22 @@
+# AI Readable Documentation
+
+This file provides an overview of the ModularMC documentation structure for AI consumption.
+
+## URL Transformation Recipe
+
+This documentation uses Sphinx with Read the Docs hosting. To access the raw Markdown source of any page (which is easier to process as it doesn't contain custom link syntax like {ref}), transform the page URL using this formula:
+
+1. Take the page URL (e.g., https://modular-mc-docs.readthedocs.io/en/latest/core-concepts/module-structure/)
+2. Insert _sources/ after the version segment (en/latest/ -> en/latest/_sources/)
+3. Change the trailing / to .md.txt
+
+**Example:**
+- Page URL: .../en/latest/core-concepts/module-structure/
+- Source URL: .../en/latest/_sources/core-concepts/module-structure.md.txt
+
+Every page has a "View page source" button that follows this pattern.
+
+---
+
+# Table of Contents
+@replace-table-of-content

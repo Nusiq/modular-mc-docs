@@ -1,1 +1,4 @@
 docs/_build
+**/__pycache__/
+*.pyc
+docs/llms.txt
