@@ -73,6 +73,13 @@ Defines how to handle conflicts when multiple modules export to the same target 
 
 See {ref}`File Merging<file-merging>` for more details.
 
+### executionOrder: number
+Lets you define the execution order of `_map.ts -> MAP` entries. By default all entries from all `_map.ts` files are generated asynchronously (Exception: the entries that have the same output to the same file run in sequence in the alphabetical order of their `_map.ts` file paths). This property lets you force and control the sequential order.
+
+Entries with `executionOrder == 0` or an unspecified value are executed asynchronously. Entries with `executionOrder < 0` are generated before the entries executed asynchronously. Entries with `executionOrder > 0` are generated after the entries executed asynchronously. The entries with lower values are executed before the entries with higher values.
+
+In most cases specifying this value is not needed but it's useful when entries output the files that should later by used as inputs by other entries. If two entries have the same `executionOrder` value, then they are evaluated based on the alphabetical order of their `_map.ts` file paths. If they're defined in the same `_map.ts` file, then the order is decided by their order in the `MAP` list.
+
 ### fileType: string
 Override automatic file type detection. Useful for files with non-standard extensions. This allows you to mark a file as JSON to enable JSON template, even if it has a different extension.
 
